@@ -27,6 +27,7 @@ jobs:
           cat package/part-* | base64 --decode > portfolio.zip
           mkdir -p source
           unzip -q portfolio.zip -d source
+          sed -i '1i using System.ComponentModel.DataAnnotations;' source/MuzammilPortfolio/Models/PortfolioModels.cs
 
       - name: Setup .NET 10
         uses: actions/setup-dotnet@v6
